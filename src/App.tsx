@@ -1,59 +1,25 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { 
   Building, 
   TrendingUp, 
-  BarChart3, 
-  Users, 
-  FileText, 
-  Receipt, 
-  CreditCard, 
-  Bell, 
   Shield,
-  Database,
-  Smartphone,
   Globe,
   Calculator,
   FileCheck,
   UserCheck,
-  Home,
-  DollarSign,
   MessageSquare,
   Zap,
-  Brain,
-  Lock,
   CheckCircle,
   ArrowRight,
-  Star,
-  Award,
-  Target,
-  PieChart,
-  LineChart,
-  Activity,
-  Settings,
-  Download,
   FileDown,
   Eye,
-  Plus,
-  Search,
-  Filter,
-  Calendar,
-  MapPin,
   Phone,
   Mail,
   ExternalLink,
-  ChevronRight,
-  ChevronLeft,
-  Play,
-  Pause,
-  RotateCcw,
-  Maximize2,
-  Minimize2,
   Github,
   Linkedin,
-  Code,
-  Terminal,
   Coffee,
   Heart
 } from 'lucide-react';
@@ -62,26 +28,13 @@ import toast from 'react-hot-toast';
 // Import your actual app images
 import dashboardImg from '../images/dashboard.png';
 import propertiesMainImg from '../images/properties main page.png';
-import propertiesDescImg from '../images/properties discription.png';
-import addPropertyImg from '../images/add propertie.png';
-import ownersMainImg from '../images/owners main view.png';
-import ownersDetails1Img from '../images/owners details 1.png';
-import ownersDetails2Img from '../images/owners details 2.png';
-import ownersDetails3Img from '../images/details 3.png';
-import owners4Img from '../images/owners 4.png';
-import owners5Img from '../images/owners 5.png';
 import rentersImg from '../images/renters.png';
-import rentersPaymentImg from '../images/renters paym,ent.png';
 import contractsImg from '../images/contracts.png';
-import contractDetailsImg from '../images/contract detils.png';
 import reportsImg from '../images/reports.png';
-import reportsGenerationImg from '../images/reports generation.png';
 import creatorImage from '../images/my image.jpg';
 
 const App: React.FC = () => {
   const [activeTab, setActiveTab] = useState('dashboard');
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1
@@ -124,15 +77,7 @@ const App: React.FC = () => {
     });
   };
 
-  // Auto-play slideshow
-  useEffect(() => {
-    if (isPlaying) {
-      const interval = setInterval(() => {
-        setCurrentImageIndex((prev) => (prev + 1) % screenshots.length);
-      }, 3000);
-      return () => clearInterval(interval);
-    }
-  }, [isPlaying]);
+
 
   const features = [
     {
@@ -229,7 +174,7 @@ const App: React.FC = () => {
       id: 'owners',
       title: 'Owner Management System',
       description: 'Complete owner profiles with detailed information, commission tracking, and financial management',
-      image: ownersMainImg,
+      image: propertiesMainImg,
       features: ['Owner Profiles', 'Commission Tracking', 'Financial Management', 'Document Storage']
     },
     {
